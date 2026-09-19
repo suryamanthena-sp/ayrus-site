@@ -21,7 +21,11 @@
 
 **GitHub repository created and pushed: BLOCKED**
 - evidence: `gh auth status` -> `You are not logged into any GitHub hosts. To log in, run: gh auth login`
-- The site is committed locally on branch `main` (commit `a534830`), ready to push.
+- evidence: `gh repo create ayrus-site --public --source=. --remote=origin --push` ->
+  `To get started with GitHub CLI, please run:  gh auth login` /
+  `Alternatively, populate the GH_TOKEN environment variable with a GitHub API authentication token.`
+- The site is committed locally on branch `main` (commit `a9b4602`), ready to push.
+- To unblock: run `gh auth login`, then `gh repo create ayrus-site --public --source=. --remote=origin --push` from `/Users/surya/Downloads/kit`, or import the local folder on Vercel directly.
 
 ## What broke and how I fixed it
 
