@@ -13,4 +13,5 @@ One line per slice: what I did -> the command I ran -> what it printed.
 - Measured mobile viewport -> headless Chrome reported `innerW=500 scrollW=500` at `--window-size=390` -> macOS clamps Chrome's minimum window width, so the "overflow" was a cropped 500px render.
 - Re-measured at a true 390px viewport in an iframe -> `innerW=390 scrollW=390` -> no horizontal overflow, phone layout correct.
 - Checked links and image attributes -> `grep -o 'href="[^"]*"' index.html` and `grep -o '<img[^>]*>'` -> booking link x3, WhatsApp, mailto correct; all five images carry width, height and alt.
-- Tried to publish -> `gh auth status` -> `You are not logged into any GitHub hosts.` Push is blocked (see REPORT.md).
+- Tried to publish -> `ssh -T git@github.com -> "Hi suryamanthena-sp!"; push over SSH succeeded (see REPORT.md).
+- Published the repo -> `git push -u origin main` -> `* [new branch] main -> main`; `git ls-remote origin` matches local HEAD afa2619.

@@ -19,13 +19,12 @@
 **Picture attributes: DONE**
 - evidence: every `<img>` carries `width`, `height` and `alt`; sizes read with `sips -g pixelWidth -g pixelHeight`.
 
-**GitHub repository created and pushed: BLOCKED**
-- evidence: `gh auth status` -> `You are not logged into any GitHub hosts. To log in, run: gh auth login`
-- evidence: `gh repo create ayrus-site --public --source=. --remote=origin --push` ->
-  `To get started with GitHub CLI, please run:  gh auth login` /
-  `Alternatively, populate the GH_TOKEN environment variable with a GitHub API authentication token.`
-- The site is committed locally on branch `main` (commit `a9b4602`), ready to push.
-- To unblock: run `gh auth login`, then `gh repo create ayrus-site --public --source=. --remote=origin --push` from `/Users/surya/Downloads/kit`, or import the local folder on Vercel directly.
+**GitHub repository: DONE** (member created the empty repo; I pushed over SSH)
+- evidence: `git push -u origin main` -> `* [new branch] main -> main` / `branch 'main' set up to track 'origin/main'.`
+- evidence: `git ls-remote origin` -> `afa261927f1f00b6f26442f7c006a90af08504af refs/heads/main`, identical to local `git rev-parse HEAD`.
+- evidence: fetched `https://github.com/suryamanthena-sp/ayrus-site` -> page lists `images`, `.gitignore`, `REPORT.md`, `WORKLOG.md`, `index.html`, 2 commits.
+- evidence: `curl -o /dev/null -w "%{http_code}" .../main/index.html` -> `HTTP 200`; the fetched file contains the booking link x3, `wa.me/919876543210`, `mailto:support@ayrusai.com` and `images/logo-dark.jpeg`.
+- repository: https://github.com/suryamanthena-sp/ayrus-site
 
 ## What broke and how I fixed it
 
