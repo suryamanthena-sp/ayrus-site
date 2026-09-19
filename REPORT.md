@@ -19,6 +19,13 @@
 **Picture attributes: DONE**
 - evidence: every `<img>` carries `width`, `height` and `alt`; sizes read with `sips -g pixelWidth -g pixelHeight`.
 
+**Live on Vercel: DONE**
+- Public URL: https://ayrusai-site.vercel.app/
+- evidence: `curl -o /tmp/ayrus_live.html -w "HTTP %{http_code} size=%{size_download}" https://ayrusai-site.vercel.app/` -> `HTTP 200  size=15107B  type=text/html`.
+- evidence: all five images -> `HTTP 200 image/jpeg` with byte sizes matching the local files (logo 145443, logo-dark 124378, profile 363814, speaking 237948, shot-1 414882).
+- evidence: live screenshot at 1440x900 shows the header, the full-width speaking photo, the cream panel, the headline with the one teal word, the subline and the teal button.
+- Note: the deployment URL the member first shared (`ayrusai-site-1w1gw7dmx-ayrus.vercel.app`) is protected by Vercel Authentication. `curl` on it returned `HTTP 302` with `location: https://vercel.com/sso-api?url=...`, i.e. a login. The project's production domain above is the public one.
+
 **GitHub repository: DONE** (member created the empty repo; I pushed over SSH)
 - evidence: `git push -u origin main` -> `* [new branch] main -> main` / `branch 'main' set up to track 'origin/main'.`
 - evidence: `git ls-remote origin` -> `afa261927f1f00b6f26442f7c006a90af08504af refs/heads/main`, identical to local `git rev-parse HEAD`.

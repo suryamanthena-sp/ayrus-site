@@ -15,3 +15,4 @@ One line per slice: what I did -> the command I ran -> what it printed.
 - Checked links and image attributes -> `grep -o 'href="[^"]*"' index.html` and `grep -o '<img[^>]*>'` -> booking link x3, WhatsApp, mailto correct; all five images carry width, height and alt.
 - Tried to publish -> `ssh -T git@github.com -> "Hi suryamanthena-sp!"; push over SSH succeeded (see REPORT.md).
 - Published the repo -> `git push -u origin main` -> `* [new branch] main -> main`; `git ls-remote origin` matches local HEAD afa2619.
+- Deployed and verified live -> `curl -w "HTTP %{http_code}" https://ayrusai-site.vercel.app/` -> HTTP 200; all five images HTTP 200 image/jpeg; deployment URL (-1w1gw7dmx-) returned HTTP 302 to the Vercel login.
