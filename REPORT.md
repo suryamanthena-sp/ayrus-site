@@ -46,7 +46,7 @@
 | Claim | Proof |
 |---|---|
 | Six sections in the required order | `grep -n 'id=' index.html`; rendered screenshots |
-| Price written once, on its own line under the cards | `grep -c "60,000" index.html` -> `1` |
+| No price on the page (member asked for it to be removed) | `grep -c "60,000\|class=\"price\"\|\.price" index.html` -> `0` |
 | Business name spelled `Ayrus` | `grep -o -i 'ayrus[a-z]*' index.html` -> `Ayrus` only (plus the name `AyrusAI` and the email domain `ayrusai`, both given by the member) |
 | Icons are inline SVG, no emoji | three `<svg>` elements in the cards; `grep` for emoji -> none |
 | Phone layout has no sideways scroll | `innerW=390 scrollW=390` |

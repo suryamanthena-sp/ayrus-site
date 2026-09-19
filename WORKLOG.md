@@ -16,3 +16,4 @@ One line per slice: what I did -> the command I ran -> what it printed.
 - Tried to publish -> `ssh -T git@github.com -> "Hi suryamanthena-sp!"; push over SSH succeeded (see REPORT.md).
 - Published the repo -> `git push -u origin main` -> `* [new branch] main -> main`; `git ls-remote origin` matches local HEAD afa2619.
 - Deployed and verified live -> `curl -w "HTTP %{http_code}" https://ayrusai-site.vercel.app/` -> HTTP 200; all five images HTTP 200 image/jpeg; deployment URL (-1w1gw7dmx-) returned HTTP 302 to the Vercel login.
+- Member asked to remove the price -> edited index.html to drop the `.price` block and its CSS -> `grep -c "60,000\|class=\"price\"\|\.price" index.html` -> `0`.
